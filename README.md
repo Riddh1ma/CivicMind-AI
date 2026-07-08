@@ -1,32 +1,197 @@
-# React + TypeScript + Vite
+# 🏙️ CivicMind AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+### AI-Powered Smart Civic Issue Reporting & Urban Management Platform
 
-Currently, two official plugins are available:
+CivicMind AI is an intelligent smart-city platform that enables citizens to report civic issues using image evidence and live location data while providing authorities with real-time incident management, AI-assisted insights, and city-wide analytics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Built as a submission for the **Google Cloud Community Hero Hackathon**, CivicMind AI explores how artificial intelligence, cloud technologies, real-time systems, and geospatial data can contribute to smarter and more responsive urban governance.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🔗 Live Application
 
-## Expanding the Oxlint configuration
+🌐 **Live Demo:** [View CivicMind AI](https://civicmind-ai-b8dd5.web.app/)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+> The application is actively being improved beyond the original hackathon submission.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+---
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 📌 The Problem
+
+Reporting civic issues such as potholes, water leakage, garbage accumulation, damaged streetlights, and drainage problems is often a slow and fragmented process.
+
+Citizens may not know:
+
+- Which municipal department is responsible for an issue.
+- How severe or urgent the reported problem is.
+- Whether action has been taken after submitting a complaint.
+- How to efficiently communicate accurate location and visual evidence.
+
+At the same time, municipal authorities need better tools to monitor incidents, prioritize complaints, identify trends, and make data-driven decisions.
+
+---
+
+## 💡 The Solution
+
+CivicMind AI provides an end-to-end intelligent civic issue reporting workflow.
+
+Citizens can upload an image of a civic problem and share their live location. The platform uses **Google Gemini AI** to analyze the image, classify the issue, estimate its severity, generate a summary, and recommend the appropriate municipal department.
+
+The report is then synchronized through **Cloud Firestore**, allowing it to appear in real time across citizen and authority dashboards.
+
+Municipal authorities can monitor incidents through an interactive command center, while City Pulse Analytics provides insights into issue distribution, department workloads, geographic hotspots, and city-wide trends.
+
+---
+
+## ✨ Key Features
+
+### 👤 Citizen Portal
+
+- Google Authentication
+- AI-powered civic issue reporting
+- Image-based issue analysis
+- Automatic GPS location detection
+- Reverse geocoding and address autofill
+- Interactive Google Maps
+- Real-time report tracking
+- Live notifications
+- Personal activity statistics
+
+### 🤖 AI-Powered Issue Analysis
+
+Using Google Gemini AI, uploaded civic issue images are analyzed to determine:
+
+- Issue category
+- Severity level
+- AI-generated incident summary
+- Recommended municipal department
+- Analysis confidence score
+
+### 🏛️ Authority Command Center
+
+- Real-time incident monitoring
+- Interactive GIS issue mapping
+- AI-assisted prioritization
+- Incident status management
+- Department-based routing
+- Live dispatch timeline
+- Search and filtering
+- Real-time Firestore synchronization
+
+### 📊 City Pulse Analytics
+
+- City-wide incident statistics
+- Live KPI monitoring
+- Issue category distribution
+- Priority and severity analysis
+- Department workload insights
+- Geographic issue hotspots
+- Operational trends
+- AI-generated insights
+
+### 🔔 Real-Time Synchronization
+
+CivicMind AI uses Cloud Firestore listeners to synchronize changes across the application.
+
+Updates to reports, notifications, incident statuses, and dashboard statistics are reflected in real time without requiring manual page refreshes.
+
+---
+
+## 🔄 Application Workflow
+
+```text
+Citizen Authentication
+          │
+          ▼
+    Citizen Dashboard
+          │
+          ▼
+      Report Issue
+          │
+          ├───────────────┐
+          ▼               ▼
+   Upload Evidence    GPS Location
+          │               │
+          ▼               ▼
+     Cloudinary       Google Maps
+          │               │
+          └───────┬───────┘
+                  ▼
+          Gemini AI Analysis
+                  │
+                  ▼
+             Cloud Firestore
+                  │
+          ┌───────┴────────┐
+          ▼                ▼
+   Citizen Dashboard   Authority Dashboard
+                           │
+                           ▼
+                  City Pulse Analytics
+## 🛠️ Tech Stack
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+### Artificial Intelligence
+- Google Gemini AI
+- Gemini Vision Analysis
+
+### Google Technologies
+- Firebase Authentication
+- Cloud Firestore
+- Firebase Hosting
+- Google Maps JavaScript API
+- Google Geocoding API
+
+### Image Management
+- Cloudinary
+
+### Development & Deployment
+- Git
+- GitHub
+- Firebase CLI
+- Google Cloud Infrastructure
+
+---
+
+## ☁️ Google Technologies Utilized
+
+| Technology | Purpose |
+|---|---|
+| **Google Gemini AI** | Image understanding, issue classification, severity analysis, and municipal department recommendations |
+| **Firebase Authentication** | Secure Google Sign-In and user session management |
+| **Cloud Firestore** | Real-time storage and synchronization of civic reports, notifications, and status updates |
+| **Google Maps Platform** | Interactive incident maps, live location display, and geographic visualization |
+| **Google Geocoding API** | Conversion of geographic coordinates into human-readable addresses |
+| **Firebase Hosting** | Deployment and hosting of the production web application |
+
+---
+
+## 📁 Project Structure
+
+    CivicMind-AI/
+    │
+    ├── public/
+    │
+    ├── src/
+    │   ├── components/
+    │   ├── context/
+    │   ├── firebase/
+    │   ├── hooks/
+    │   ├── services/
+    │   ├── types/
+    │   ├── App.tsx
+    │   └── main.tsx
+    │
+    ├── .env.example
+    ├── .gitignore
+    ├── firebase.json
+    ├── package.json
+    ├── tsconfig.json
+    └── vite.config.ts
+
+---
