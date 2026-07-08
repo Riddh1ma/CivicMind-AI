@@ -158,19 +158,6 @@ Citizen Authentication
 
 ---
 
-## ☁️ Google Technologies Utilized
-
-| Technology | Purpose |
-|---|---|
-| **Google Gemini AI** | Image understanding, issue classification, severity analysis, and municipal department recommendations |
-| **Firebase Authentication** | Secure Google Sign-In and user session management |
-| **Cloud Firestore** | Real-time storage and synchronization of civic reports, notifications, and status updates |
-| **Google Maps Platform** | Interactive incident maps, live location display, and geographic visualization |
-| **Google Geocoding API** | Conversion of geographic coordinates into human-readable addresses |
-| **Firebase Hosting** | Deployment and hosting of the production web application |
-
----
-
 ## 📁 Project Structure
 
     CivicMind-AI/
